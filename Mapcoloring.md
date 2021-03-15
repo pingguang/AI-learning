@@ -20,7 +20,6 @@
          
   return True
 
-
   def Backtracking(Vars):
   
       Select a variable Xi ∈ Vars 
@@ -46,7 +45,6 @@
              Solution ← Solution − (Xi, v(i))
              
        return False
-
 
    def CSP-BT():
    
@@ -86,7 +84,6 @@
             
          Solution ← Solution − (Xi, v(i))
          
-
   def CSP-BT():
   
       Solutions ← ∅
