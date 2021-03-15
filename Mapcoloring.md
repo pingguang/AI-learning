@@ -11,49 +11,86 @@
 1.Mapcoloring.py : 回溯算法找出一个满足所有约束条件的解
 
   def Consistent(Xi,v(i)):     //判断是否相容 
+  
       for each (Xj,v(j))∈ Solution:      
-      if Rij ∈ R and (v(i), v(j)) /∈ Rij :      
+      
+      if Rij ∈ R and (v(i), v(j)) /∈ Rij :  
+      
          return False         
+         
   return True
 
+
   def Backtracking(Vars):
+  
       Select a variable Xi ∈ Vars 
+      
       for each value v(i) ∈ Di:
+      
           if Consistent(Xi, v(i)):
+          
              Solution ← Solution + (Xi, v(i))
+             
              if Xi is the only variable in Vars:
+             
                 return True
+                
              else:
+             
                 if Backtracking(Vars\{Xi}):
+                
                    return True
+                   
                 else:
+                
              Solution ← Solution − (Xi, v(i))
+             
        return False
 
+
    def CSP-BT():
+   
        Solution ← ∅
 
 
 
 2.Mapcoloring2.py: 回溯算法找出所有满足所有约束条件的解
+
   def Consistent(Xi,v(i)):    //判断是否相容
+  
       for each (Xj,v(j))∈ Solution:
+      
       if Rij ∈ R and (v(i), v(j)) /∈ Rij :
+      
         return False
+        
       return True
 
   def Backtracking(V ars):
+  
       Select a variable Xi ∈ Vars
+      
       for each value v(i) ∈ Di
+      
       if Consistent(Xi, v(i)):
+      
          Solution ← Solution + (Xi, v(i))
+         
          if Xi is the only variable in Vars:
+         
             Solutions ← Solutions + Solution
+            
          else:
+         
             Backtracking(Vars\{Xi})
+            
          Solution ← Solution − (Xi, v(i))
+         
 
   def CSP-BT():
+  
       Solutions ← ∅
+      
       Solution ← ∅
+      
   return Backtracking(X)
